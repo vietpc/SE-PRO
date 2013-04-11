@@ -1,0 +1,55 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<td><strong>
+<html>
+<body >
+<p align ="center" style ="margin-left: 10; margin-right: 5; margin-top: 10; margin-bottom: 1">THAY ĐỔI THÔNG TIN CÁ NHÂN</p>
+</body>
+</html>
+ </strong></td>
+<?php
+session_start();
+$host="localhost"; // luôn luôn là localhost 
+$username="root"; // user của mysql 
+$password=""; // Mysql password 
+$db_name="test"; // tên database 
+$tbl_name="member"; // tên table 
+// kết nối cơ sở dữ liệu 
+mysql_connect("$host", "$username", "$password")or die("Eror connect"); 
+mysql_select_db("$db_name")or die("cannot select DB"); 
+$myusername = $_SESSION['login_user'];
+$sql_select = "SELECT * FROM $tbl_name WHERE username='$myusername'"; 
+$query = mysql_query($sql_select); 
+$result = mysql_fetch_assoc($query); 
+?>
+
+
+<table width="0%" border ="0"  align="center"  style ="margin-top:30; margin-bottom: 30 "cellpadding="4" cellspacing ="4" bgcolor ="#FFFFFF">
+<form name ="form2" method="post" action="formchangename.php">
+<tr>
+<td width ="70" align="center"><b>Full Name</b></td>
+<td width = "2">:</td>
+<td width ="70" ><?php echo $result['HoTen']; ?></td>
+<td><input type ="submit" name="Change1" value ="Change"></td>
+</tr>
+</form>
+<form name ="form2" method="post" action="formchangeemail.php">
+<tr>
+<td width ="70" align="center"><b>Email</b></td>
+<td width = "2">:</td>
+<td width ="70"  ><?php echo $result['email']; ?></td>
+<td><input type ="submit" name="Change2" value ="Change"></td>
+</tr>
+</form>
+<form name ="form2" method="post" action="formchangepass.php">
+<tr>
+<td width ="70" align="center"><b>Password</b></td>
+<td width = "2">:</td>
+<td width ="70" ><?php echo $result['password']; ?></td>
+
+<td><input type ="submit" name="Change3" value ="Change"></td>
+</tr>
+<tr> 
+			<td  align="center"><a href='Logout.php'>Logout</a></td>
+</tr>
+</form>
+</table>

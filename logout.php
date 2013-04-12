@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Làm quen với php</title>
+  <title>WEBSITE DANG KI MON HOC</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
 </head>
 	<style>
@@ -9,7 +9,7 @@
 	</style>
 <body>
 		<font face="Bodoni" size="5" color="red">
-		<center><h1>Hiển thị database </h1></center>
+		<center><h1> BẢNG ĐĂNG KÍ MÔN HỌC </h1></center>
 	<center>
 
 <?php

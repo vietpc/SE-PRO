@@ -1,31 +1,53 @@
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<form name ="form1" method="post" action="addsubject.php">
-<table width="60%" border ="0" align="center" cellpadding="4" cellspacing ="4" bgcolor ="#FFFFFF">
-<tr>
-<td colspan="5" align="center"><strong>Thêm Môn Học </strong></td>
-</tr>
-<tr>
-<td width ="200" align="center">Mã Môn Học</td>
-<td width = "">:</td>
-<td width ="400"><input name="mamonhoc" type="text" id="mamonhoc"></td>
-</tr>
-<tr>
-<td width ="200" align="center">Tên Môn Học</td>
-<td width = "">:</td>
-<td width ="400" ><input name="tenmonhoc" type="text" id="tenmonhoc"></td>
-</tr>
-<tr>
-<td width ="200" align="center">Số Tín Chỉ</td>
-<td width = "">:</td>
-<td width ="400" ><input name="sotinchi" type="text" id="sotinchi"></td>
-</tr>
-<tr>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><input type ="submit" name="Thêm" value ="Thêm"></td>
-</tr>
-<tr> 
-<td  align ="center"><a href='Logout.php'>Logout</a></td>
- </tr> 
-</table>
-</form>
+<html>
+ <head>
+		<title>WEBSITE QUAN LY DAO TAO</title>
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<style>
+			body {background: url(bg_2cwebvn.png);color:#00FF00; font-size:16px;}
+			h2{margin:50px 0px 30px;}
+		</style>
+	</head>
+	<body>
+		<font face="Bodoni" size="5" color="red">
+		<center><h1> BANG THEM MON HOC</h1></center>
+		<center>
+		<form action="check_subject.php" method="post">                    
+			<table align="centre" border="0"  id="table" style="margin-left-"150px"; border-collapse:collapse; width:100%; ">
+
+				<tr>                                    
+					<td >
+						<strong>Ten mon hoc</strong>  
+						<br />
+						<input name="monhoc" value="" type="text" />
+					</td>
+				</tr>
+                               
+				<tr>  
+					<td>
+						<strong>Ma so mon hoc</strong>
+						<br />
+						<input name="msmh" value="" type="text">
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<strong>So tin chi</strong>
+						<br />
+						<input name="tinchi" value="" type="text">
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+						<input name="Them" value="Add" type="submit">
+					</td>
+				</tr>
+                                
+			</table>               
+		</form>
+		<p><a href='index.php'>Nhap vao day de quay lai trang chu</a></p>
+		</center>
+	</body>
+</html>
+

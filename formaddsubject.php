@@ -1,5 +1,5 @@
 <html>
- <head>
+	<head>
 		<title>WEBSITE QUAN LY DAO TAO</title>
 			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<style>
@@ -50,4 +50,3 @@
 		</center>
 	</body>
 </html>
-

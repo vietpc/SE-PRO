@@ -1,4 +1,4 @@
-1<?php
+<?php
   // Tải file connect.php dùng để liên kết đến CSDL
 	require_once("connect.php");
 	// Lưu thông tin người dùng nhập vào từ form

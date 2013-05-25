@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>WEBSITE QUAN LY DAO TAO</title>
+		<title>WEBSITE QUẢN LÝ ĐÀO TẠO</title>
 			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<style>
 			body {background: url(bg_2cwebvn.png);color:#00FF00; font-size:16px;}

@@ -1,32 +1,31 @@
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
 <?php
-session_start();
-$host="localhost"; // luôn luôn là localhost 
-$username="root"; // user của mysql 
-$password=""; // Mysql password 
-$db_name="test"; // tên database 
-$tbl_name="member"; // tên table 
-// kết nối cơ sở dữ liệu 
-mysql_connect("$host", "$username", "$password")or die("Eror connect"); 
-mysql_select_db("$db_name")or die("cannot select DB"); 
-$myusername = $_SESSION['login_user'];
-if(isset($_POST['Change3'])){
-$mypassword = $_POST['mypassword'];
-$sql = "SELECT HoTen FROM $tbl_name WHERE username='$myusername'";
-$result ="UPDATE $tbl_name SET password= '$mypassword' WHERE username = '$myusername'";
-$query = mysql_query($result);
-if($query){
-	echo "Đã thay đổi thành công";
-}
-else{
-	echo "Error";
-}
-}
-else{
-	echo "Error";
-}
+	require_once("stuconnect.php");
+	$mssv = $_POST['mssv'];
+	$password = $_POST['password'];
+	$query = "SELECT * FROM sinh_vien WHERE ma_sinh_vien = $mssv";
+	// Truy vấn đến CSDL 
+	$result = mysql_query ($query);
+	if ( @mysql_num_rows( $result ) < 1 )
+    {
+		echo "Mã sinh viên bạn nhập không tồn tại";
+		echo "<p><a href='javascript:history.go(-1)'>
+			Nhấp vào đây để quay trở lại</a></p>";
+	} else 
+	{
+		$change = ("UPDATE sinh_vien 	
+					SET password = '{$password}'
+					WHERE ma_sinh_vien = '{$mssv}'");
+		$result = mysql_query($change);
+		if ($result) {
+			echo "Thay doi thanh cong.";
+			echo "<p><a href='stuform_login.php'>
+				Nhấp vào đây để quay trở lại đăng nhập</a></p>";
+		} else
+		{
+			echo "Có lỗi trong quá trình truy cập CSDL";
+			echo "Hệ thống chưa thể cấp lại mật khẩu mới cho bạn";
+			echo "<p><a href='javascript:history.go(-1)'>
+				Nhấp vào đây để quay trở lại</a></p>";
+		}
+	}
 ?>
-<tr> 
-			<td  align="center"><a href='Logout.php'>Logout</a></td>
-</tr>
